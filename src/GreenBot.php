@@ -24,7 +24,7 @@ class GreenBot{
     }
     public function deleteWebHook(bool $is_bot = true, string $token = null){
         $BotToken = $is_bot ? $this->env('BotToken') : $token ;
-        // return $this->Request([], 'deleteWebhook', $BotToken);
+        return $this->Request([], 'deleteWebhook', $BotToken);
     }
     public function WebhookInfo(bool $is_bot = true, string $token = null){
         $BotToken = $is_bot ? $this->env('BotToken') : $token ;
@@ -64,7 +64,7 @@ class GreenBot{
             'message_id'=>$message_id,
             'disable_notification'=>$disable_notification,
             'protect_content'=>$protect_content
-            ]);
+            ],'forwardMessage');
     }
     public function sendMessageIf(array $if, string $textMessage, $chat_id, $reply = null, array $Keyboard = [], string $parseMode = "markdown"){}
     public function Updates(bool $returnArray = false){
