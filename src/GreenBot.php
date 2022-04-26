@@ -98,12 +98,3 @@ class GreenBot{
         }
     }
 }
-$b = new GreenBot();
-$up = $b->Updates(false);
-
-$from_id = $up->message->from->id;
-$text = $up->message->text;
-
-if($text == "/start"){
-    $b->sendMessage("Hello", $from_id,null,['keyboard'=>[[['text'=>'s']]]]);
-}
